@@ -1,0 +1,32 @@
+### AppController
+# @name RecadosController
+
+@baseUrl = http://localhost:3000
+
+### RecadosController
+GET {{baseUrl}}/recados
+
+### Recados By id
+GET {{baseUrl}}/recados/2
+
+### Criar Recados
+POST {{baseUrl}}/recados
+Content-Type: application/json
+
+{ 
+  "texto": "Exemplo de recado",
+  "de": "usuário1",
+  "para": "usuário2"
+}
+
+### Atualizar Recados
+PATCH  {{baseUrl}}/recados/2
+Content-Type: application/json
+
+{
+  "texto": "Exemplo de recado atualizado2",
+  "lido": true
+}
+
+### Deletar recado
+DELETE {{baseUrl}}/recados/2

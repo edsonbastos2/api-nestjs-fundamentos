@@ -4,10 +4,13 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
+  HttpStatus,
   Param,
   ParseIntPipe,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { RecadosService } from './recados.service';
 import { CreateRecadoDto } from './dto/create-recado.dto';
@@ -18,8 +21,9 @@ import { PaginationDto } from 'src/common/dto/pagination.dto';
 export class RecadosController {
   constructor(private readonly recadosService: RecadosService) {}
 
+  @HttpCode(HttpStatus.OK)
   @Get()
-  getAllRecados(@Param() paginationDto: PaginationDto) {
+  getAllRecados(@Query() paginationDto: PaginationDto) {
     return this.recadosService.getRecados(paginationDto);
   }
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
+import { IsNotEmpty, IsPositive, IsString, MinLength } from 'class-validator';
 
 export class CreateRecadoDto {
   @IsString()
@@ -7,15 +7,9 @@ export class CreateRecadoDto {
   @MinLength(3)
   readonly texto: string;
 
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(3)
-  @IsOptional()
-  readonly de: string;
+  @IsPositive()
+  deId: number;
 
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(3)
-  @IsOptional()
-  readonly para: string;
+  @IsPositive()
+  paraId: number;
 }

@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { RecadosModule } from 'src/recados/recados.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { PessoaModule } from 'src/pessoa/pessoa.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       }),
     }),
     RecadosModule,
+    PessoaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

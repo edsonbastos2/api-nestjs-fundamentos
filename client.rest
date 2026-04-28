@@ -4,29 +4,60 @@
 @baseUrl = http://localhost:3000
 
 ### RecadosController
-GET {{baseUrl}}/recados
+GET {{baseUrl}}/recados/
+?limit=10
+&offset=0
 
 ### Recados By id
-GET {{baseUrl}}/recados/2
+GET {{baseUrl}}/recados/11
 
 ### Criar Recados
 POST {{baseUrl}}/recados
 Content-Type: application/json
 
 { 
-  "texto": "Exemplo de recado",
-  "de": "usuário1",
-  "para": "usuário2"
+  "texto": "Exemplo de recado Claudia para Maria",
+  "deId": 8,
+  "paraId": 5
 }
 
 ### Atualizar Recados
-PATCH  {{baseUrl}}/recados/2
+PATCH  {{baseUrl}}/recados/11
 Content-Type: application/json
 
 {
-  "texto": "Exemplo de recado atualizado2",
   "lido": true
 }
 
 ### Deletar recado
 DELETE {{baseUrl}}/recados/2
+
+
+## @name PessoaController
+
+### Listar Pessoas
+GET {{baseUrl}}/pessoa
+
+### Pessoas By id
+GET {{baseUrl}}/pessoa/1
+
+### Criar Pessoa
+POST {{baseUrl}}/pessoa
+Content-Type: application/json
+
+{ 
+  "nome": "Claudia Silva",
+  "email": "claudia.silva@example.com",
+  "password": "Senha@123"
+}
+
+### Atualizar Pessoa
+PATCH  {{baseUrl}}/pessoa/7
+Content-Type: application/json
+
+{
+  "password": "NovaSenha@456"
+}
+
+### Deletar Pessoa
+DELETE {{baseUrl}}/pessoa/7
